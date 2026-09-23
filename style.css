@@ -188,8 +188,6 @@ a:hover {
 }
 
 .clients {
-  font-size: 13px;
-  color: var(--muted);
   word-break: keep-all;
 }
 
