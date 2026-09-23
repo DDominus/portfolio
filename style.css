@@ -3,6 +3,7 @@
   --text: #e8e8e8;
   --muted: #8a8a8a;
   --accent: #f2a33a;
+  --line: rgba(255, 255, 255, 0.3);
   --font: "Pretendard Variable", Pretendard, Inter, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
 
@@ -76,6 +77,8 @@ a:hover {
 
 .video {
   margin-bottom: 128px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
 }
 
 .video:last-child {
@@ -140,6 +143,8 @@ a:hover {
 
 .section__title {
   margin: 0 0 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
   font-size: 13px;
   font-weight: 500;
   color: var(--muted);
@@ -174,13 +179,14 @@ a:hover {
 
 /* 푸터 */
 .site-footer {
-  padding: 64px 0 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 24px 80px;
 }
 
 .site-footer__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
   display: flex;
   justify-content: space-between;
   gap: 16px;
@@ -211,10 +217,7 @@ a:hover {
     padding: 0 16px 64px;
   }
   .site-footer {
-    padding: 40px 0 56px;
-  }
-  .site-footer__inner {
-    padding: 0 16px;
+    padding: 40px 16px 56px;
   }
   .video {
     margin-bottom: 80px;

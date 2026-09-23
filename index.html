@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>최태구 — Director of Photography</title>
-  <meta name="description" content="촬영 감독 최태구의 포트폴리오. 영화, 광고, 뮤직비디오 촬영 작업.">
+  <meta name="description" content="촬영 감독 최태구의 포트폴리오. 정부 부처·기업·병원 유튜브 콘텐츠 촬영.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="최태구 — Director of Photography">
-  <meta property="og:description" content="촬영 감독 최태구의 포트폴리오. 영화, 광고, 뮤직비디오 촬영 작업.">
+  <meta property="og:description" content="촬영 감독 최태구의 포트폴리오. 정부 부처·기업·병원 유튜브 콘텐츠 촬영.">
   <meta name="theme-color" content="#0a0a0a">
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,7 +40,7 @@
 
     <h2 class="section__title section__title--sub">Clients</h2>
     <p class="clients">
-      국방부 · 과학기술정보통신부 · 농림축산식품부 · 고용노동부 · 현대건설 · 볼보그룹코리아 · LH · 삼성서울병원
+      국방부 · 과학기술정보통신부 · 현대건설 · 볼보그룹코리아 · LH · 아주대학교 · 삼성서울병원 · 아주대학교병원
     </p>
   </section>
 
@@ -68,11 +68,14 @@
       item.className = "video";
 
       const num = String(i + 1).padStart(2, "0");
+      const thumb = v.thumb
+        ? `thumbs/${v.thumb}`
+        : `https://img.youtube.com/vi/${v.youtubeId}/hqdefault.jpg`;
       item.innerHTML = `
         <h2><span class="num">${num}</span>${v.title}</h2>
         <p class="meta">${v.client} · ${v.role} · ${v.year}</p>
         <div class="player">
-          <img src="https://img.youtube.com/vi/${v.youtubeId}/hqdefault.jpg" alt="${v.title}" width="640" height="360">
+          <img src="${thumb}" alt="${v.title}" width="640" height="360">
         </div>
       `;
 
