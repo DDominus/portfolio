@@ -114,15 +114,15 @@ a:hover {
 /* 위·아래 가로선 */
 .video::before {
   inset: 4px 16px;
-  border-top: 2px solid var(--video-line);
-  border-bottom: 2px solid var(--video-line);
+  border-top: 1px solid var(--video-line);
+  border-bottom: 1px solid var(--video-line);
 }
 
 /* 왼쪽·오른쪽 세로선 */
 .video::after {
   inset: 16px 4px;
-  border-left: 2px solid var(--video-line);
-  border-right: 2px solid var(--video-line);
+  border-left: 1px solid var(--video-line);
+  border-right: 1px solid var(--video-line);
 }
 
 .video:last-child {
@@ -138,10 +138,11 @@ a:hover {
   writing-mode: vertical-rl;
   white-space: nowrap;
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 500;
   line-height: 1;
-  letter-spacing: 0.1em;
-  color: var(--muted);
+  letter-spacing: 0.08em;
+  color: #e8e8e8;
 }
 
 @media (max-width: 1024px) {
