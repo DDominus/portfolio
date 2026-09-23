@@ -4,7 +4,7 @@
   --muted: #8a8a8a;
   --accent: #f2a33a;
   --line: rgba(255, 255, 255, 0.3);
-  --video-line: rgba(255, 255, 255, 0.7);
+  --video-line: rgba(255, 255, 255, 0.6);
   --font: "Pretendard Variable", Pretendard, Inter, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
 
@@ -77,16 +77,35 @@ a:hover {
 }
 
 .video {
+  position: relative;
   margin-bottom: 128px;
-  padding: 9px;
-  /* 위·왼쪽 선(ㄱ자 틀). 오른쪽·아래는 투명으로 두어 hover 때 레이아웃이 밀리지 않게 */
-  border: 1px solid transparent;
-  border-top-color: var(--video-line);
-  border-left-color: var(--video-line);
+  padding: 10px 0 0 11px;
 }
 
-.video:hover {
-  border-color: #fff;
+/* 가로선(칸 맨 위, 전체 폭)과 세로선(왼쪽, 가로선 10px 아래부터)을 따로 그려 모서리가 붙지 않게 */
+.video::before,
+.video::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  background: var(--video-line);
+}
+
+.video::before {
+  top: 0;
+  right: 0;
+  height: 1px;
+}
+
+.video::after {
+  top: 11px;
+  bottom: 0;
+  width: 1px;
+}
+
+.video:hover::before,
+.video:hover::after {
+  background: #fff;
 }
 
 .video:last-child {
