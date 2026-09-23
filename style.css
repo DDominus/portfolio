@@ -5,6 +5,12 @@
   --accent: #f2a33a;
   --line: rgba(255, 255, 255, 0.3);
   --video-line: #ffffff;
+  /* 페이지 공통 기준선: 모든 블록이 같은 최대 폭·좌우 여백을 쓰고,
+     글자는 영상 칸 안쪽 여백(--box-pad)만큼 더 들어가 번호·썸네일 끝과 맞춤 */
+  --page-max: 1084px;
+  --gutter: 24px;
+  --box-pad: 16px;
+  --edge: calc(var(--gutter) + var(--box-pad));
   --font: "Pretendard Variable", Pretendard, Inter, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
 
@@ -42,9 +48,9 @@ a:hover {
 }
 
 .site-header__inner {
-  max-width: 1200px;
+  max-width: var(--page-max);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 var(--edge);
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -70,18 +76,15 @@ a:hover {
 
 /* 영상 목록 */
 #videos {
-  max-width: 1200px;
+  max-width: var(--page-max);
   margin: 0 auto;
-  padding: 96px 24px;
+  padding: 96px var(--gutter);
 }
 
 .video {
   position: relative;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 128px;
-  padding: 16px;
+  padding: var(--box-pad);
 }
 
 /* 네 면의 선을 따로 그림. 각 선이 모서리에서 12px씩 짧아 서로 닿지 않음 */
@@ -167,9 +170,9 @@ a:hover {
 
 /* About / Contact */
 .section {
-  max-width: 1200px;
+  max-width: var(--page-max);
   margin: 0 auto;
-  padding: 0 24px 96px;
+  padding: 0 var(--edge) 96px;
 }
 
 .section__title {
@@ -208,9 +211,9 @@ a:hover {
 
 /* 푸터 */
 .site-footer {
-  max-width: 1200px;
+  max-width: var(--page-max);
   margin: 0 auto;
-  padding: 64px 24px 80px;
+  padding: 64px var(--edge) 80px;
 }
 
 .site-footer__inner {
@@ -233,11 +236,11 @@ a:hover {
 
 /* 모바일 */
 @media (max-width: 600px) {
+  :root {
+    --gutter: 16px;
+  }
   .site-header {
     padding: 28px 0 0;
-  }
-  .site-header__inner {
-    padding: 0 16px;
   }
   .site-header__inner {
     flex-direction: column;
@@ -248,13 +251,13 @@ a:hover {
     margin-left: 0;
   }
   #videos {
-    padding: 56px 16px;
+    padding: 56px var(--gutter);
   }
   .section {
-    padding: 0 16px 64px;
+    padding: 0 var(--edge) 64px;
   }
   .site-footer {
-    padding: 40px 16px 56px;
+    padding: 40px var(--edge) 56px;
   }
   .video {
     margin-bottom: 80px;
