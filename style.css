@@ -78,14 +78,17 @@ a:hover {
 
 .site-header__nav {
   display: flex;
-  font-family: var(--mono);
   gap: 32px;
-  /* 자간 때문에 생기는 마지막 글자 뒤 여백을 상쇄해 CONTACT 끝을 썸네일 끝에 맞춤 */
-  margin-right: -0.05em;
+  /* 자간 때문에 생기는 마지막 글자 뒤 여백을 상쇄해 CONTACT 끝을 썸네일 끝에 맞춤 (0.06em × 15px) */
+  margin-right: -0.9px;
+}
+
+.site-header__link {
+  font-family: "IBM Plex Sans", var(--font);
   font-size: 15px;
   color: #e8e8e8;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
 }
 
 /* 영상 목록 */
