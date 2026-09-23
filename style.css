@@ -12,6 +12,8 @@
   --box-pad: 16px;
   --edge: calc(var(--gutter) + var(--box-pad));
   --font: "Pretendard Variable", Pretendard, Inter, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  /* 한글은 Mono에 글리프가 없어 Pretendard로 표시됨 */
+  --mono: "IBM Plex Mono", "Pretendard Variable", Pretendard, monospace;
 }
 
 * {
@@ -62,7 +64,8 @@ a:hover {
 }
 
 .site-header__name a {
-  font-size: 28px;
+  font-family: "IBM Plex Sans KR", var(--font);
+  font-size: 22px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
@@ -75,6 +78,7 @@ a:hover {
 
 .site-header__nav {
   display: flex;
+  font-family: var(--mono);
   gap: 32px;
   /* 자간 때문에 생기는 마지막 글자 뒤 여백을 상쇄해 CONTACT 끝을 썸네일 끝에 맞춤 */
   margin-right: -0.05em;
@@ -137,6 +141,11 @@ a:hover {
   margin: 0;
   font-size: 17px;
   font-weight: 600;
+}
+
+.video .num,
+.video .mono {
+  font-family: var(--mono);
 }
 
 .video .num {
@@ -227,6 +236,7 @@ a:hover {
 }
 
 .site-footer__inner {
+  font-family: var(--mono);
   padding-top: 10px;
   border-top: 1px solid var(--line);
   display: flex;
@@ -253,7 +263,7 @@ a:hover {
     padding: 32px 0 0;
   }
   .site-header__name a {
-    font-size: 22px;
+    font-size: 20px;
   }
   .site-header__inner {
     flex-direction: column;
