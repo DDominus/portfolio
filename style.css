@@ -4,6 +4,7 @@
   --muted: #8a8a8a;
   --accent: #f2a33a;
   --line: rgba(255, 255, 255, 0.3);
+  --video-line: rgba(255, 255, 255, 0.7);
   --font: "Pretendard Variable", Pretendard, Inter, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
 
@@ -77,32 +78,44 @@ a:hover {
 
 .video {
   margin-bottom: 128px;
-  padding-top: 10px;
-  border-top: 1px solid var(--line);
+  padding: 9px;
+  /* 위·왼쪽 선(ㄱ자 틀). 오른쪽·아래는 투명으로 두어 hover 때 레이아웃이 밀리지 않게 */
+  border: 1px solid transparent;
+  border-top-color: var(--video-line);
+  border-left-color: var(--video-line);
+}
+
+.video:hover {
+  border-color: #fff;
 }
 
 .video:last-child {
   margin-bottom: 0;
 }
 
+.video__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 16px;
+  margin-bottom: 9px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
 .video h2 {
-  margin: 0 0 6px;
-  font-size: 22px;
+  margin: 0;
+  font-size: inherit;
   font-weight: 500;
-  letter-spacing: -0.01em;
 }
 
 .video .num {
-  display: inline-block;
-  min-width: 48px;
-  font-size: 17px;
   font-variant-numeric: tabular-nums;
   color: var(--accent);
 }
 
 .video .meta {
-  margin: 0 0 16px 48px;
-  font-size: 15px;
+  margin: 0;
   color: var(--muted);
 }
 

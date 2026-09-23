@@ -72,8 +72,11 @@
         ? `thumbs/${v.thumb}`
         : `https://img.youtube.com/vi/${v.youtubeId}/hqdefault.jpg`;
       item.innerHTML = `
-        <h2><span class="num">${num}</span>${v.title}</h2>
-        <p class="meta">${v.client} · ${v.role} · ${v.year}</p>
+        <div class="video__head">
+          <span class="num">${num}</span>
+          <h2>${v.title}</h2>
+          <p class="meta">${v.client} · ${v.role} · ${v.year}</p>
+        </div>
         <div class="player">
           <img src="${thumb}" alt="${v.title}" width="640" height="360">
         </div>
