@@ -104,7 +104,7 @@ a:hover {
   padding: var(--box-pad);
 }
 
-/* 네 면의 선을 따로 그림. 각 선이 모서리에서 12px씩 짧아 서로 닿지 않음 */
+/* 네 면의 선을 따로 그림. 칸 가장자리에서 4px 안쪽에 두고, 각 선이 모서리에서 12px씩 짧아 서로 닿지 않음 */
 .video::before,
 .video::after {
   content: "";
@@ -113,14 +113,14 @@ a:hover {
 
 /* 위·아래 가로선 */
 .video::before {
-  inset: 0 12px;
+  inset: 4px 16px;
   border-top: 2px solid var(--video-line);
   border-bottom: 2px solid var(--video-line);
 }
 
 /* 왼쪽·오른쪽 세로선 */
 .video::after {
-  inset: 12px 0;
+  inset: 16px 4px;
   border-left: 2px solid var(--video-line);
   border-right: 2px solid var(--video-line);
 }
