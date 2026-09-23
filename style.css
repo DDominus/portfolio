@@ -118,14 +118,14 @@ a:hover {
   align-items: baseline;
   gap: 4px 16px;
   margin-bottom: 9px;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.4;
 }
 
 .video h2 {
   margin: 0;
-  font-size: inherit;
-  font-weight: 500;
+  font-size: 17px;
+  font-weight: 600;
 }
 
 .video .num {
