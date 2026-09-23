@@ -96,6 +96,12 @@
 
       list.appendChild(item);
     });
+
+    // 첫 영상 칸 옆 세로 문구: 마지막 번호는 영상 개수에서 계산
+    const label = document.createElement("p");
+    label.className = "frames-label";
+    label.textContent = `FRAMES 01—${String(videos.length).padStart(2, "0")}`;
+    list.firstElementChild.appendChild(label);
   </script>
 </body>
 </html>
