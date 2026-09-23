@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko" id="top">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>최태구 — Director of Photography</title>
+  <meta name="description" content="촬영 감독 최태구의 포트폴리오. 영화, 광고, 뮤직비디오 촬영 작업.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="최태구 — Director of Photography">
+  <meta property="og:description" content="촬영 감독 최태구의 포트폴리오. 영화, 광고, 뮤직비디오 촬영 작업.">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <div class="site-header__name">
+        <a href="#top">최태구</a>
+        <span class="site-header__title">Director of Photography</span>
+      </div>
+      <nav class="site-header__nav">
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="videos"></main>
+
+  <section id="about" class="section">
+    <h2 class="section__title">About</h2>
+    <p>
+      정부 부처와 기업, 병원의 유튜브 콘텐츠를 연간 단위로 촬영해 왔습니다.
+    </p>
+
+    <h2 class="section__title section__title--sub">Clients</h2>
+    <p class="clients">
+      국방부 · 과학기술정보통신부 · 농림축산식품부 · 고용노동부 · 현대건설 · 볼보그룹코리아 · LH · 삼성서울병원
+    </p>
+  </section>
+
+  <section id="contact" class="section contact">
+    <h2 class="section__title">Contact</h2>
+    <p>
+      <a href="mailto:ctgv@daum.net">ctgv@daum.net</a><br>
+      <a href="https://www.instagram.com/tego_che/" target="_blank" rel="noopener">@tego_che</a>
+    </p>
+  </section>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <span>© 2026 Choi Taegu</span>
+      <a href="https://www.instagram.com/tego_che/" target="_blank" rel="noopener">전체 작업 보기 →</a>
+    </div>
+  </footer>
+
+  <script src="videos.js"></script>
+  <script>
+    const list = document.getElementById("videos");
+
+    videos.forEach((v, i) => {
+      const item = document.createElement("article");
+      item.className = "video";
+
+      const num = String(i + 1).padStart(2, "0");
+      item.innerHTML = `
+        <h2><span class="num">${num}</span>${v.title}</h2>
+        <p class="meta">${v.client} · ${v.role} · ${v.year}</p>
+        <div class="player">
+          <img src="https://img.youtube.com/vi/${v.youtubeId}/hqdefault.jpg" alt="${v.title}" width="640" height="360">
+        </div>
+      `;
+
+      const player = item.querySelector(".player");
+      player.addEventListener("click", () => {
+        player.innerHTML = `
+          <iframe width="640" height="360"
+            src="https://www.youtube.com/embed/${v.youtubeId}?autoplay=1&rel=0"
+            title="${v.title}"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        `;
+        item.classList.add("playing");
+      }, { once: true });
+
+      list.appendChild(item);
+    });
+  </script>
+</body>
+</html>

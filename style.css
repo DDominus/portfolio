@@ -1,0 +1,222 @@
+:root {
+  --bg: #0a0a0a;
+  --text: #e8e8e8;
+  --muted: #8a8a8a;
+  --accent: #f2a33a;
+  --font: "Pretendard Variable", Pretendard, Inter, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 링크: 기본은 본문색, hover에만 accent */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* 헤더 */
+.site-header {
+  padding: 40px 0 0;
+}
+
+.site-header__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.site-header__name a {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.site-header__title {
+  margin-left: 12px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.site-header__nav {
+  display: flex;
+  gap: 20px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+/* 영상 목록 */
+#videos {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 96px 24px;
+}
+
+.video {
+  margin-bottom: 128px;
+}
+
+.video:last-child {
+  margin-bottom: 0;
+}
+
+.video h2 {
+  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.video .num {
+  display: inline-block;
+  min-width: 48px;
+  font-size: 17px;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+}
+
+.video .meta {
+  margin: 0 0 16px 48px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.player {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.player img,
+.player iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.player img {
+  object-fit: cover;
+}
+
+/* 재생 중: 플레이어 위쪽 얇은 선 */
+.video.playing .player {
+  box-shadow: 0 -2px 0 0 var(--accent);
+}
+
+/* About / Contact */
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 96px;
+}
+
+.section__title {
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.section p {
+  margin: 0;
+  max-width: 560px;
+}
+
+.section__title--sub {
+  margin-top: 40px;
+}
+
+.clients {
+  font-size: 13px;
+  color: var(--muted);
+  word-break: keep-all;
+}
+
+/* Contact 링크: 밑줄 */
+.contact a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: #8a8a8a;
+}
+
+.contact a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+/* 푸터 */
+.site-footer {
+  padding: 64px 0 80px;
+}
+
+.site-footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+/* 모바일 */
+@media (max-width: 600px) {
+  .site-header {
+    padding: 28px 0 0;
+  }
+  .site-header__inner {
+    padding: 0 16px;
+  }
+  .site-header__inner {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .site-header__title {
+    display: block;
+    margin-left: 0;
+  }
+  #videos {
+    padding: 56px 16px;
+  }
+  .section {
+    padding: 0 16px 64px;
+  }
+  .site-footer {
+    padding: 40px 0 56px;
+  }
+  .site-footer__inner {
+    padding: 0 16px;
+  }
+  .video {
+    margin-bottom: 80px;
+  }
+}
