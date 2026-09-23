@@ -151,6 +151,12 @@ a:hover {
   font-family: var(--mono);
 }
 
+/* 메타 구분 점: 폰트가 섞여도 간격이 같도록 띄어쓰기 대신 margin 사용 */
+.video .sep {
+  margin: 0 8px;
+  font-family: var(--font);
+}
+
 .video .num {
   font-variant-numeric: tabular-nums;
   color: var(--accent);
