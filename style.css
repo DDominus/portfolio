@@ -7,7 +7,7 @@
   --video-line: #ffffff;
   /* 페이지 공통 기준선: 모든 블록이 같은 최대 폭·좌우 여백을 쓰고,
      글자는 영상 칸 안쪽 여백(--box-pad)만큼 더 들어가 번호·썸네일 끝과 맞춤 */
-  --page-max: 1084px;
+  --page-max: 976px;
   --gutter: 24px;
   --box-pad: 16px;
   --edge: calc(var(--gutter) + var(--box-pad));
