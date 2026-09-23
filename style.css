@@ -4,7 +4,7 @@
   --muted: #8a8a8a;
   --accent: #f2a33a;
   --line: rgba(255, 255, 255, 0.3);
-  --video-line: rgba(255, 255, 255, 0.6);
+  --video-line: #ffffff;
   --font: "Pretendard Variable", Pretendard, Inter, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
 
@@ -79,33 +79,28 @@ a:hover {
 .video {
   position: relative;
   margin-bottom: 128px;
-  padding: 10px 0 0 11px;
+  padding: 16px;
 }
 
-/* 가로선(칸 맨 위, 전체 폭)과 세로선(왼쪽, 가로선 10px 아래부터)을 따로 그려 모서리가 붙지 않게 */
+/* 네 면의 선을 따로 그림. 각 선이 모서리에서 12px씩 짧아 서로 닿지 않음 */
 .video::before,
 .video::after {
   content: "";
   position: absolute;
-  left: 0;
-  background: var(--video-line);
 }
 
+/* 위·아래 가로선 */
 .video::before {
-  top: 0;
-  right: 0;
-  height: 1px;
+  inset: 0 12px;
+  border-top: 2px solid var(--video-line);
+  border-bottom: 2px solid var(--video-line);
 }
 
+/* 왼쪽·오른쪽 세로선 */
 .video::after {
-  top: 11px;
-  bottom: 0;
-  width: 1px;
-}
-
-.video:hover::before,
-.video:hover::after {
-  background: #fff;
+  inset: 12px 0;
+  border-left: 2px solid var(--video-line);
+  border-right: 2px solid var(--video-line);
 }
 
 .video:last-child {
